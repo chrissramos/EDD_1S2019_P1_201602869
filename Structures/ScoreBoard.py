@@ -1,3 +1,4 @@
+from graphviz import Digraph
 class Node:
     def __init__(self, name, score):
         self.name = name
@@ -37,6 +38,13 @@ class Cola:
             self.head.next = None
             self.head = temp
 
+    def graph(self):
+        g = Digraph('G', filename='Cola', format='png')
+        temp = self.head
+        while temp.next is not None:
+            g.edge(temp.name, temp.next.name)
+            temp = temp.next
+        g.view()
 
 cola = Cola()
 cola.add(Node("randall",100))
@@ -48,10 +56,9 @@ cola.add(Node("Colocha",2000))
 
 cola.print_list()
 
+cola.graph()
 cola.descolar()
-
-cola.print_list()
-cola.descolar()
-cola.print_list()
+input()
+cola.graph()
 
 #input()
