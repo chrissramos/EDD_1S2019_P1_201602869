@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5576f786-e356-4613-a190-d4d77d81276a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/ScoreBoard.py" beforeDir="false" afterPath="$PROJECT_DIR$/ScoreBoard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Users.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ScoreBoard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="266">
+              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
         </entry>
@@ -226,8 +225,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ScoreBoard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="266">
+          <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>

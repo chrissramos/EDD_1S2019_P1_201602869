@@ -57,8 +57,6 @@ cola.add(Node("Colocha",2000))
 cola.print_list()
 
 cola.graph()
-cola.descolar()
-input()
-cola.graph()
+
 
 #input()
