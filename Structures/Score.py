@@ -49,9 +49,5 @@ pila.delete()
 pila.print_pila()
 pila.delete()
 pila.print_pila()
-pila.delete()
-pila.delete()
-pila.print_pila()
-pila.delete()
-pila.print_pila()
-input()
+
+
