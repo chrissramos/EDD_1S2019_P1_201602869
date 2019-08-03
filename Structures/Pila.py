@@ -1,3 +1,4 @@
+import curses
 class Node:
     def __init__(self, x, y):
         self.x = x
@@ -34,4 +35,5 @@ pila.add(Node(5, 6))
 pila.print_pila()
 pila.add(Node(7, 8))
 pila.print_pila()
-
+pila.add(Node(9,10))
+pila.print_pila()
