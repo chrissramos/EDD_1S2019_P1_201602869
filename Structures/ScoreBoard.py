@@ -27,17 +27,31 @@ class Cola:
                 print("->", end='')
                 temp = temp.next
             print("[", temp.name, ",", temp.score, "]","->NULL")
+            print("cabezza:", self.head.name)
 
+    def descolar(self):
+        if self.head is None:
+            print("cola vacia")
+        else:
+            temp = self.head.next
+            self.head.next = None
+            self.head = temp
 
 
 cola = Cola()
 cola.add(Node("randall",100))
 cola.add(Node("lucas",20))
 cola.add(Node("pedro",30))
-cola.add(Node("luis",25))
+cola.add(Node("juan",25))
 cola.add(Node("Manola",200))
 cola.add(Node("Colocha",2000))
 
 cola.print_list()
 
-input()
+cola.descolar()
+
+cola.print_list()
+cola.descolar()
+cola.print_list()
+
+#input()
