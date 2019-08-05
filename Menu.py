@@ -90,7 +90,7 @@ def main(stdscr):
             #imprimir_pedirRuta(stdscr, str(current_row))
             #stdscr.getch()
             if current_row is 0: #play
-                imprimir_pedirRuta(stdscr, "jugar")
+                imprimir_pedirRuta(stdscr, "jugarr")
                 stdscr.getch()
 
             elif current_row is 1: #scoreborad
@@ -99,7 +99,6 @@ def main(stdscr):
             elif current_row is 2: #userSelectrion
                 imprimir_pedirRuta(stdscr, "userselection")
                 stdscr.getch()
-
             elif current_row is 3: #reports
                 imprimir_pedirRuta(stdscr, "Reports")
                 stdscr.getch()
