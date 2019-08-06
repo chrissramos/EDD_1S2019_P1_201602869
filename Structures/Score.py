@@ -37,7 +37,7 @@ class Pila:
             print("[", temp.x, " ,", temp.y, "]")
 
     def graph(self):
-        g = Digraph('G', filename='Pila', format='png', node_attr={'shape': 'record'})
+        g = Digraph('G', filename='Pila', format='png', node_attr={'shape': 'record'}, graph_attr={'rankdir':'LR'})
         temp = self.head
         text = ''
         contador = 0

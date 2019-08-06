@@ -41,9 +41,9 @@ def imprimir_pedirRuta(stdscr, text):
 #def cargaMasiva(stdscr, nombre):
 def cargaMasiva(stdscr, archi):
     stdscr.clear()
-    nombre ="C:\\Users\\Chriss Ramos\\Documents\\Edd\\PracticaEdd1\\" + str(archi, 'utf-8') + ".csv"
-    imprimir_pedirRuta(stdscr, nombre)
-    stdscr.getch()
+    nombre =str(archi, 'utf-8') + ".csv"
+    #imprimir_pedirRuta(stdscr, nombre)
+    #stdscr.getch()
     #creating instace of CircularLinked
 
     with open(nombre) as csvfile:
@@ -51,19 +51,30 @@ def cargaMasiva(stdscr, archi):
         nuevovar = '\n\t\t\t\t\t\t\t'
         #file = open("archivo.txt", "w")
         for row in reader:
-            #nuevovar = nuevovar + row['Usuario'] + '\n\t\t\t\t\t\t\t'
-            circularList.add(Node(row['Usuario']))
+            nuevovar = nuevovar + row['Usuario'] + '\n\t\t\t\t\t\t\t'
+            circularList.add(NodeUser(row['Usuario']))
         #file.close()
         #imprimir_pedirRuta(stdscr,nuevovar)
-        #circularList.graph()
-        stdscr.getch()
+        circularList.graph()
+        #stdscr.getch()
 
-def userSelectionShow(stdscr, text):
+def userSelectionShow(stdscr, user):
     stdscr.clear()
     h, w = stdscr.getmaxyx()
-    x = w//2 - len(text)//2
+    x = w//2
     y = h//2
-    stdscr.addstr(y,x, text)
+    aux = user
+    stdscr.addstr(y,x, "<-------" + user.name + "------->")
+    key2 = stdscr.getch()
+    if key2 == curses.KEY_RIGHT:
+        userSelectionShow(stdscr,user.next)
+        stdscr.clear()
+        stdscr.getch()
+    elif key2 == curses.KEY_LEFT:
+        userSelectionShow(stdscr,user.previous)
+
+    stdscr.getch()
+
 
     stdscr.refresh();
 
@@ -98,7 +109,9 @@ def main(stdscr):
                 stdscr.getch()
             elif current_row is 2: #userSelectrion
                 imprimir_pedirRuta(stdscr, "userselection")
-                stdscr.getch()
+                usuario = circularList.head
+                userSelectionShow(stdscr, usuario)
+
             elif current_row is 3: #reports
                 imprimir_pedirRuta(stdscr, "Reports")
                 stdscr.getch()
@@ -117,8 +130,8 @@ def main(stdscr):
                 #stdscr.getch()
                 curses.echo()
                 name = stdscr.getstr()
-                imprimir_pedirRuta(stdscr, name)
-                stdscr.getch()
+                #imprimir_pedirRuta(stdscr, name)
+                #stdscr.getch()
                 cargaMasiva(stdscr,name)
 
             else:

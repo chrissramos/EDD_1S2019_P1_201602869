@@ -1,5 +1,5 @@
 from graphviz import Digraph
-class Node:
+class NodeUser:
 
     def __init__(self, name):
         self.name = name
@@ -52,15 +52,17 @@ class CircularLinkedList:
         g.edge(self.head.name, temp.name)
         g.view()
 
+#    def getHead(self):
+#        return self.head
 
 #list = CircularLinkedList()
-#list.add(Node("juan"))
-#list.add(Node("pedro"))
-#list.add(Node("lucas"))
-#list.add(Node("Peter"))
-#list.add(Node("Ludovico"))
-#list.add(Node("Chriss"))
-#list.add(Node("Maik"))
-#list.add(Node("Zlatan"))
+#list.add(NodeUser("juan"))
+#list.add(NodeUser("pedro"))
+#list.add(NodeUser("lucas"))
+#list.add(NodeUser("Peter"))
 #list.print_list()
+
+#usuario = list.head
+#print(usuario.name)
+
 #list.graph()
