@@ -42,8 +42,8 @@ def imprimir_pedirRuta(stdscr, text):
 def cargaMasiva(stdscr, archi):
     stdscr.clear()
     nombre =str(archi, 'utf-8') + ".csv"
-    #imprimir_pedirRuta(stdscr, nombre)
-    #stdscr.getch()
+    imprimir_pedirRuta(stdscr, nombre)
+    stdscr.getch()
     #creating instace of CircularLinked
 
     with open(nombre) as csvfile:
@@ -55,7 +55,7 @@ def cargaMasiva(stdscr, archi):
             circularList.add(NodeUser(row['Usuario']))
         #file.close()
         #imprimir_pedirRuta(stdscr,nuevovar)
-        circularList.graph()
+        #circularList.graph()
         #stdscr.getch()
 
 def userSelectionShow(stdscr, user):
@@ -68,15 +68,23 @@ def userSelectionShow(stdscr, user):
     key2 = stdscr.getch()
     if key2 == curses.KEY_RIGHT:
         userSelectionShow(stdscr,user.next)
-        stdscr.clear()
-        stdscr.getch()
+        #stdscr.clear()
+        #stdscr.getch()
     elif key2 == curses.KEY_LEFT:
         userSelectionShow(stdscr,user.previous)
+    elif key2 ==curses.KEY_ENTER:
+        stdscr.clear()
+        imprimir_pedirRuta(stdscr, "Selecciono:" + user.name )
+        #stdscr.addstr(y,x, "Selecciono:" + user.name)
+        stdscr.getch()
 
     stdscr.getch()
 
 
     stdscr.refresh();
+
+def showReport(stdscr, opcion):
+    circularList.graph()
 
 def main(stdscr):
     # turn off cursor blinking
@@ -116,6 +124,7 @@ def main(stdscr):
                 imprimir_pedirRuta(stdscr, "Ingrese el numero de reporte: \n 1.......Usuarios \n \n Numero: ")
                 curses.echo()
                 opcion = stdscr.getstr()
+                showReport(stdscr, opcion)
                 stdscr.getch()
 
             elif current_row is 4:
