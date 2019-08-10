@@ -78,7 +78,7 @@ def userSelectionShow(stdscr, user):
         #stdscr.addstr(y,x, "Selecciono:" + user.name)
         stdscr.getch()
 
-    stdscr.getch()
+    #stdscr.getch()
 
 
     stdscr.refresh();
@@ -141,6 +141,7 @@ def main(stdscr):
                 #stdscr.getch()
                 curses.echo()
                 name = stdscr.getstr()
+                curses.noecho()
                 #imprimir_pedirRuta(stdscr, name)
                 #stdscr.getch()
                 cargaMasiva(stdscr,name)
