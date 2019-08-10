@@ -113,7 +113,9 @@ def main(stdscr):
                 userSelectionShow(stdscr, usuario)
 
             elif current_row is 3: #reports
-                imprimir_pedirRuta(stdscr, "Reports")
+                imprimir_pedirRuta(stdscr, "Ingrese el numero de reporte: \n 1.......Usuarios \n \n Numero: ")
+                curses.echo()
+                opcion = stdscr.getstr()
                 stdscr.getch()
 
             elif current_row is 4:
